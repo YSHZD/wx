@@ -1,0 +1,17 @@
+<view class="container">
+  <view class="result_img"><image mode="aspectFit" src="{{src}}"/></view>
+  <view class="main">
+    <text class="title">{{title}}</text>
+    <text class="dec">{{dec}}</text>
+    <navigator url="/pages/index/index" open-type="redirect"  hover-class="none" ><button>重新测试</button></navigator>
+  </view>
+  <view class="help">
+    <text class="helptips">你也许想看</text>
+    <view wx:for="{{list}}" wx:key="{{index}}" class="item">
+      <navigator url="/pages/outUrl/outUrl?url={{item.url}}"><text>{{item.title}}</text><image src="../../images/right.png"/></navigator>
+    </view>
+  </view>
+  <view class="banners">
+     <navigator  wx:for="{{banner}}" wx:key="{{index}}" url="/pages/outUrl/outUrl?url={{item.url}}"><image class="banneritem" mode="widthFix" src="{{item.img}}"/></navigator>
+  </view>
+</view>
